@@ -47,24 +47,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mMap.animateCamera(CameraUpdateFactory.zoomOut());
             }
         });
-        locationName.add("Rayer Bazar Bodhyo Bhumi");
-        lat.add("23.751033");
-        lng.add("90.357096");//1
-        locationName.add("coffee express");
-        lat.add("23.754114");
-        lng.add("90.360951");//2
-        locationName.add("Dutch-Bangla Bank Limited (DBBL)");
-        lat.add("23.754340");
-        lng.add("90.360895");//2
-        locationName.add("RFL Best Buy - Kaderabad Housing");
-        lat.add("23.754794");
-        lng.add("90.360611");
-        locationName.add("Coffee Adda");
-        lat.add("23.754581");
-        lng.add("90.361576");
-        locationName.add("Katashur Shahi Jam'e Mosque");
-        lat.add("23.754507");
-        lng.add("90.362424");
+        locationName.add("Rayer Bazar Bodhyo Bhumi");lat.add("23.751033");lng.add("90.357096");//1
+        locationName.add("coffee express");lat.add("23.754114");lng.add("90.360951");//2
+        locationName.add("Dutch-Bangla Bank Limited (DBBL)");lat.add("23.754340");lng.add("90.360895");//3
+        locationName.add("RFL Best Buy - Kaderabad Housing");lat.add("23.754794");lng.add("90.360611");//4
+        locationName.add("Coffee Adda");lat.add("23.754581");lng.add("90.361576");//5
+        locationName.add("Katashur Shahi Jam'e Mosque");lat.add("23.754507");lng.add("90.362424");//6
 
 
 
