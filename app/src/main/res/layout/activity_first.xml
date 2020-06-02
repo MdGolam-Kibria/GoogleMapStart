@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/safePlace"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/Safe_place"
+                android:layout_width="83dp"
+                android:clickable="true"
+                android:layout_height="75dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_icon"
+
+                />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Safe \nplace"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:scaleType="fitXY"
+                android:id="@+id/escape_threat"
+                android:layout_width="83dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_tps_to_escape_from_threat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tips to \n escape \nfrom threat"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/law_relatedto"
+
+                android:layout_width="83dp"
+                android:layout_height="75dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/law_for_women" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Law Related  \nto Women"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/self_defence"
+
+                android:layout_width="83dp"
+                android:layout_height="75dp"
+                android:scaleType="fitXY"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/self_defence" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voice for \n self defence"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="80dp"
+
+        android:id="@+id/user_login_btn"
+        android:layout_width="228dp"
+        android:layout_height="228dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_btn"
+        android:text=" Emergency"
+        android:textSize="30sp"
+
+        />
+
+</LinearLayout>

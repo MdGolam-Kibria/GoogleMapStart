@@ -17,19 +17,26 @@
         android:id="@+id/satellite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+
         android:layout_alignParentBottom="true"
-        android:layout_margin="15dp"
-        tools:text="Satellite View"
-        android:layout_marginRight="20dp"
-        android:textAllCaps="false" />
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:textAllCaps="false"
+        tools:text="Satellite View" />
+
     <ZoomControls
         android:id="@+id/zoom"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/satellite"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/satellite"
         android:layout_toRightOf="@+id/satellite" />
 
 </RelativeLayout>

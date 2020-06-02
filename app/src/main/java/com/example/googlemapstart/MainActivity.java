@@ -30,6 +30,9 @@ import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
@@ -47,10 +50,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         satellite = findViewById(R.id.satellite);
+        satellite.setText("Satellite");
         zoomControls = findViewById(R.id.zoom);
         mapFragment.getMapAsync(this);
-
         locationPermissionRequest();
+
+//        final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+//        executorService.scheduleAtFixedRate(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        }, 2, 1, TimeUnit.SECONDS);
 
         zoomControls.setOnZoomInClickListener(new View.OnClickListener() {
             @Override
@@ -64,24 +75,33 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mMap.animateCamera(CameraUpdateFactory.zoomOut());
             }
         });
-        locationName.add("Rayer Bazar Bodhyo Bhumi");
-        lat.add("23.751033");
-        lng.add("90.357096");//1
-        locationName.add("coffee express");
-        lat.add("23.754114");
-        lng.add("90.360951");//2
-        locationName.add("Dutch-Bangla Bank Limited (DBBL)");
-        lat.add("23.754340");
-        lng.add("90.360895");//3
-        locationName.add("RFL Best Buy - Kaderabad Housing");
-        lat.add("23.754794");
-        lng.add("90.360611");//4
-        locationName.add("Coffee Adda");
-        lat.add("23.754581");
-        lng.add("90.361576");//5
-        locationName.add("Katashur Shahi Jam'e Mosque");
-        lat.add("23.754507");
-        lng.add("90.362424");//6
+//        locationName.add("hhh");
+//        lat.add("24.977869");
+//        lng.add("88.842820");
+        locationName.add("Nikunja 2 Kacha Bazar");
+        lat.add("23.831758");
+        lng.add("90.415829");//1
+        locationName.add("22b Kobi Faruk Sarani");
+        lat.add("23.832107");
+        lng.add("90.418743");//2ok
+        locationName.add("1 Rd No. 11");
+        lat.add("23.832368");
+        lng.add("90.418422");//3ok
+        locationName.add("Rnr Auto");
+        lat.add("23.831598");
+        lng.add("90.418484");//4ok
+        locationName.add("SAY AUTOMATION & ENGINEERING");
+        lat.add("23.831910");
+        lng.add("90.417539");//5ok
+        locationName.add("Al Modina Pharmacy");
+        lat.add("23.831321");
+        lng.add("90.417115");//6
+        locationName.add("Khilkhet Nikunja 2 Jame Masjid");
+        lat.add("23.830353");
+        lng.add(" 90.417930");
+        locationName.add("Tommy Miah's Tea Bar And Cafe Restaurant");
+        lat.add("23.834495");
+        lng.add("90.416581");
 
 
         satellite.setOnClickListener(new View.OnClickListener() {
@@ -112,10 +132,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        insertMarkers(lat, lng, locationName, mMap);
+
         if (permissionIsGranted == true) {
+            mMap.setMyLocationEnabled(true);
+            mMap.getUiSettings().setMyLocationButtonEnabled(true);
+
             getDeviceLocation();
             insertMarkers(lat, lng, locationName, mMap);
         }
+
+
+
+        //recomment above line
 
 //        satellite.setText("satellite");
 //
@@ -148,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {//check korlam PERMISSION_GRANTED ase kina
                 //in future here wii be add device location code
                 Toast.makeText(this, "Location PERMISSION_GRANTED ", Toast.LENGTH_LONG).show();
+                permissionIsGranted=true;
             } else {
                 Toast.makeText(this, "deny permission", Toast.LENGTH_SHORT);
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);//PERMISSION_GRANTED na thakle aber permission er jonno request korbo
